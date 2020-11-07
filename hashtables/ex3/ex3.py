@@ -1,8 +1,19 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    result = []
+    spread_array = []
+    cache = {}
+
+    # "spread" arrays into one single array
+    for arr in arrays:
+        spread_array += arr
+    
+    for i, num in enumerate(spread_array):
+        # for each num, increment cache[num]
+        
+        cache[num] = 1 if num not in cache else cache[num] + 1
+
+        if cache[num] == len(arrays):
+            result.append(num)
 
     return result
 
